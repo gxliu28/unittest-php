@@ -8,7 +8,7 @@ class Math {
     }
  
     public function sub($a, $b) {
-		// bug
+		// This is a bug
         return $a + $b;
     }
 }
