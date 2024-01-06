@@ -17,7 +17,7 @@ jobs:
       run: composer validate
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist
 
     - name: PHPUnit tests
       uses: php-actions/phpunit@v3
@@ -26,5 +26,5 @@ jobs:
         coverage_clover: "coverage/clover.xml"
 
     - name: Perform PHP Unit
-      run: composer install && composer run test
+      run: composer run test
 
