@@ -1,0 +1,35 @@
+name: PHP Unit Test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Setup PHP
+      uses: actions/setup-php@v2
+      with:
+        php-version: '7.2.5'
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: PHPUnit tests
+      uses: php-actions/phpunit@v3
+      with:
+        php_extensions: "xdebug"
+        coverage_clover: "coverage/clover.xml"
+
+    - name: Perform PHP Unit
+      run: composer install && composer run test
+
