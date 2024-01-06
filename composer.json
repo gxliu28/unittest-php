@@ -2,9 +2,12 @@
     "require-dev": {
         "phpunit/phpunit": "^7.5"
     },
-	"autoload": {
-		"psr-4": {
-			"Math\\": "tests/src/"
-		}
-	}
+    "autoload": {
+        "psr-4": {
+            "Math\\": "tests/src/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
 }

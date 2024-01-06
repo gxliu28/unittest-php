@@ -19,7 +19,7 @@ jobs:
     - name: Setup PHP
       uses: actions/setup-php@v2
       with:
-        php-version: '7.2.5'
+        php-version: '7.3.29'
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
